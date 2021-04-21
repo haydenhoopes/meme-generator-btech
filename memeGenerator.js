@@ -9,7 +9,7 @@ function generateMeme (img, canvas, context, topTextInput, bottomTextInput) {
 
     let fontSize = canvas.width*document.getElementById('textSize').value;
     context.font = fontSize + 'px Impact';
-    context.fillStyle = "white";
+    context.fillStyle = document.getElementById('textColor').value;
     context.strokeStyle = "black";
     context.lineWidth = fontSize/20;
     context.textAlign = 'center';
@@ -54,7 +54,7 @@ function setEventForButton(imageInput, canvas, context, topTextInput, bottomText
     reader.readAsDataURL(imageInput.files[0]);
 }
 
-$('#textSize').on('input', () => {
+$('.format').on('input', () => {
     let topTextInput = document.getElementById('topText');
     let bottomTextInput = document.getElementById('bottomText');
     let imageInput = document.getElementById("image-input");

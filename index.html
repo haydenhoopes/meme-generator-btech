@@ -1,43 +1,76 @@
 <!DOCTYPE html>
-<html lang='en'>
-    <head>
-        <meta charset="utf-8">
-        <title>Meme Generator</title>
-        <link rel="stylesheet" href="./style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </head>
-    <body class="container mt-3">
-        <div class="row">
-            <div class="col-3">
-                <p>
-                    <textarea id="topText"></textarea>
-                </p>
-                <p>
-                    <textarea id="bottomText"></textarea>
-                </p>
-                <p>
-                    <input type="file" id="image-input" accept="image/*">
-                </p>
-                <p>
-                    <button id="generate-btn">Submit</button>
-                </p>
-                <p>
-                    Text Size: <input id="textSize" type="range" step=".01" max="0.45" min=".03" value=".15">
-                </p>
-            </div>
-            <div class="col-9">
-                <p>
-                <canvas id="meme-canvas"></canvas>
-            </p>
-            </div>
-        </div>
-        
-    </body>
-    <footer>
-        <script src="./memeGenerator.js"></script>
-    </footer>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        background: rgb(254, 254, 254);
+        background: linear-gradient(
+          132deg,
+          rgba(254, 254, 254, 1) 0%,
+          rgba(238, 238, 238, 1) 50%,
+          rgba(221, 221, 221, 1) 100%
+        );
+        background-size: 100vw 100vh;
+      }
+    </style>
+  </head>
+  <body class="container mt-3 pt-3">
+    <div class="row">
+      <div class="col-3">
+        <p>
+          <textarea
+            id="topText"
+            style="resize: both; overflow: auto"
+          ></textarea>
+        </p>
+        <p>
+          <textarea
+            id="bottomText"
+            style="resize: both; overflow: auto"
+          ></textarea>
+        </p>
+        <p>
+          <input type="file" id="image-input" accept="image/*" />
+        </p>
+        <p>
+          <button id="generate-btn">Submit</button>
+        </p>
+        <p>
+          Text Size:
+          <input
+            class="format"
+            id="textSize"
+            type="range"
+            step=".01"
+            max="0.45"
+            min=".03"
+            value=".15"
+          />
+        </p>
+        <p>
+          Color:
+          <input class="format" id="textColor" type="color" value="#ffffff" />
+        </p>
+      </div>
+      <div class="col-9">
+        <p>
+          <canvas id="meme-canvas"></canvas>
+        </p>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <script src="./memeGenerator.js"></script>
+  </footer>
 </html>
