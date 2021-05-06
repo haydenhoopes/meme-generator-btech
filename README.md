@@ -135,3 +135,11 @@ Use the same approach to add the bottom text to the canvas. Set the ```textBaseL
 
 ### Add a slider input to change the text size
 Your meme generator is almost finished. Now it's time to add the finishing touches: a slider that will allow the user to choose a different font size easily. There will be two sliders, one for each text.
+
+First add a new ```input``` tag near its corresponding ```textarea``` tag in your ```index.html``` file. Set the type to range, set a min of 0.05, the max of 0.25, the value to 0.15, and the step to 0.01. Give each one a unique id. Then, in your ```memegenerator.js``` file, use querySelector to get both elements and store them in contstant variables. Then, replace your variable ```fontSize``` with two different variables called ```topTextFontSize``` and ```bottomTextFontSize```, each of which is the value of the constants that you queried. Finally, modify the code that fills in the text and stroke to get a correct font size that looks appropriate in your image.
+- Add ```input``` tags of type ```range``` to each ```textarea``` tag, each with a unique ```id```.
+- Use ```querySelector``` to get both input elements.
+- Replace the current ```fontSize``` variable with two new variables that contain the value of each of the slider input elements you queried.
+- Modify the ```fillText``` and ```strokeText``` functions to output an appropriate font size.
+
+Congratulations! You have finished the meme generator web application.
